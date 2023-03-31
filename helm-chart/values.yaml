@@ -1,6 +1,6 @@
 replicaCount: 1
 
-port: 4000
+port: 5000
 
 canary:
   enabled: false
@@ -16,17 +16,17 @@ image:
   repository: anderondev/sample
   pullPolicy: Always
   tag: latest
-  containerPort: 4000
+  containerPort: 5000
   livenessProbe:
     path: /
-    port: 4000
+    port: 5000
     periodSeconds: 30
     successThreshold: 1
     failureThreshold: 3
     timeoutSeconds: 1
   readinessProbe:
     path: /
-    port: 4000
+    port: 5000
     periodSeconds: 30
     successThreshold: 1
     failureThreshold: 3
@@ -55,7 +55,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 4000
+  port: 5000
 
 
 resources:
